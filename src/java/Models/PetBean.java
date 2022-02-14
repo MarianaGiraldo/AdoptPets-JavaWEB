@@ -21,6 +21,19 @@ public class PetBean {
     private String breed;
     private Boolean is_adopted;
 
+    public PetBean() {
+    }
+
+    public PetBean(String pet_type, String name, int born_year, String color, String breed, Boolean is_adopted) {
+        this.pet_type = pet_type;
+        this.name = name;
+        this.born_year = born_year;
+        this.color = color;
+        this.breed = breed;
+        this.is_adopted = is_adopted;
+    }
+    
+    
     /**
      * @return the pet_type
      */

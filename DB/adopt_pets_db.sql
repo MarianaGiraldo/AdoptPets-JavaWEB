@@ -1,7 +1,7 @@
 CREATE DATABASE `adopt_pets_db`;
 
 CREATE TABLE `adopt_pets_db`.`users` ( 
-	`id` INT NOT NULL AUTO_INCREMENT ,  
+	`id` INT NOT NULL ,  
 	`Name` VARCHAR(50) NOT NULL ,  
 	`PhoneNumber` VARCHAR(15) NOT NULL ,  
 	`Email` VARCHAR(100) NOT NULL,
@@ -17,4 +17,13 @@ CREATE TABLE `adopt_pets_db`.`pets` (
         `Breed` VARCHAR(50) NOT NULL,
         `is_adopted` Boolean NOT NULL,
 	PRIMARY KEY  (`id`)
-) ENGINE = InnoDB;
+);
+
+CREATE TABLE `adopt_pets_db`.`user_pet` ( 
+	`id` INT NOT NULL AUTO_INCREMENT ,
+        `user_id` int NOT NULL , 
+	`pet_id` INT NOT NULL ,  
+	PRIMARY KEY  (`id`),
+        FOREIGN KEY (`user_id`) REFERENCES users(`id`),
+        FOREIGN KEY (`pet_id`) REFERENCES pets(`id`)
+);

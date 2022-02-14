@@ -19,9 +19,10 @@
   
     /*==================================================================
     [ Validate ]*/
-    var name = $('.validate-input input[name="name"]');
-    var email = $('.validate-input input[name="email"]');
-    var message = $('.validate-input textarea[name="message"]');
+    var name = $('.validate-input input[name="txtName"]');
+    var email = $('.validate-input input[name="txtEmail"]');
+    var id = $('.validate-input textarea[name="txtId"]');
+    var phone = $('.validate-input textarea[name="txtPhone"]');
 
 
     $('.validate-form').on('submit',function(){
@@ -38,7 +39,12 @@
             check=false;
         }
 
-        if($(message).val().trim() === ''){
+        if($(id).val().trim() === ''){
+            showValidate(message);
+            check=false;
+        }
+        
+        if($(phone).val().trim() === ''){
             showValidate(message);
             check=false;
         }
